@@ -1,0 +1,142 @@
+---------------------------------------------------------------------
+🔹 1. UNIX came first
+	In the 1960s–70s, engineers at Bell Labs (AT&T) developed UNIX.
+	It was revolutionary because it introduced:
+		Multiuser support (many users can log in at once)
+		Multitasking (run multiple programs at once)
+		File-based structure (/home, /usr, /etc, etc.)
+💡 UNIX became the foundation for many modern systems.
+
+🔹 2. Linux was inspired by UNIX
+	In 1991, Linus Torvalds (a Finnish student) wanted to make a free version of UNIX for his PC.
+	He created the Linux kernel, which behaves like UNIX but is completely free and open-source.
+👉 So, Linux = UNIX-like system, not UNIX itself.
+---------------------------------------------------------------------
+✅ What is Linux?
+
+Linux is an operating system — just like Windows and macOS.
+
+🧠 An Operating System (OS) is software that manages:
+	**Computer hardware (CPU, RAM, storage…)
+	**Programs (apps)
+	**User interaction (keyboard, mouse, screen…)
+But one big difference:
+	✅ Linux is open-source
+	❌ Windows/macOS are closed-source
+
+
+✅ Where do we use Linux?
+
+Linux is everywhere!
+
+✔ 96% of Cloud servers run Linux
+✔ ALL supercomputers run Linux
+✔ Android OS is built on Linux
+✔ Websites, apps, databases — run on Linux servers
+✔ DevOps, Data Engineering → Linux skills required
+✔ Cybersecurity & Ethical Hacking → Linux mandatory
+✔ IoT Devices (routers, smart TVs, robots…)
+
+So learning Linux = career power ✅
+
+✅ Why should you learn Linux?
+
+Since you are learning backend + DB + DevOps tools like Git/GitHub:
+
+Linux is needed for:
+✔ Running servers (Node, Django, Java apps)
+✔ Managing PostgreSQL, MySQL databases
+✔ Using DevOps tools (Docker, Jenkins, CI/CD)
+✔ Cloud computing jobs (AWS, Azure)
+
+Companies expect developers to deploy applications on Linux environments.
+
+
+✅ How do we use Linux? (Very important 🔥)
+
+Linux can be used in 2 ways:
+
+1️⃣ GUI interface (like Windows)
+
+Click menus, open software visually
+Example: Ubuntu Desktop
+
+2️⃣ Command Line / Terminal (main focus for developers!)
+
+You type commands to control the system
+
+----------------------------------------------------------------------
+🔸 UNIX = The ancestor, closed-source, paid, old but stable.
+🔹 Linux = The child inspired by UNIX, open-source, free, and modern.
+---------------------------------------------------------------------
+both share similar architecture:
+__________________________________
+
+User
+|
+│   type our commands in terminal
+│  (commands)
+▼
+Shell
+|
+│   interpreter that understands your commands
+│  (passes commands to karnel) (bash -- defalut)
+▼
+Kernel
+│
+|   engine that does the actual work
+│  (controls)
+▼
+Hardware
+______________________________________________________
+
+-----------------------------------------------------------------
+Part	        Role
+------------------------------------------------------------------
+Terminal	The screen where you type our commands
+Shell	        The interpreter that understands your commands(default BASH)
+Kernel	        The engine that does the actual work
+------------------------------------------------------------------
+Bash is the default SHELL in most Linux systems.
+
+
+
+Practical Example:
+ ________________________________
+|$ ls                            |
+|                                |
+|Documents  Downloads  Pictures  |
+|________________________________|
+
+Terminal:          The window you see
+Bash (Shell):      Reads ls, sends it to Kernel
+Kernel:            Gets folder list from hard drive
+Terminal:          Displays output on your screen
+--------------------------------------------------------------------------------------
+++++++++++++++++++COMMANDS++++++++++++++++
+
+Commands are case senstitive, so Date is NOT the same thing as date.
+1. date
+	-> Fri Oct 31 11:50:34 UTC 2025
+2. ncal     ->new calendedar gives vertical calender
+3. cal      ->old calender gives horizontal calender
+4. clear    -> To clear screen 
+--------------------------------------------------------------------------------------
++++++++++++++++++COMMAND STRUCTURE++++++++++++++
+ _____________________________
+|                             |
+| command -options arguments  |
+|_____________________________|
+
+most commands support multiple options that modify their behavior. We can decide which option to include, if any, when we execute a command.
+
+similarly, many commands accept arguments(the thing that the command acts upon or uses)
+example::
+$ echo mwahahaha
+	->mwahahaha
+The echo command is extremly simple. it takes the arguments we provide to it and print them out. it echoes them back at us.
+$ ncal 2021       -> it gives entire year calender all 12 months of year 2021
+$ ncal july 1969  -> it gives only july month of 1969 year
+
+
+
