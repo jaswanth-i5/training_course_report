@@ -10,7 +10,8 @@ INSTALLATION OF VirtualBox AND UBUNTU SETUP
 3) Create a new virtual machine (VM)
 
 	Open VirtualBox → New.
-	Name: Ubuntu (VirtualBox auto selects Type=Linux, Version=Ubuntu (64-bit)).
+	Name: Ubuntu 
+	ISO image: select ubuntu iso file (make sure this ubuntu-iso file in 'VirtualBox VMs' folder)
 	Memory: 4096 MB (4 GB) recommended if your host has ≥8GB. If your host has 8GB total, use 2048 MB.
 	Hard disk: Create a virtual hard disk now → VDI (VirtualBox Disk Image) → Dynamically allocated → Size 30 GB (or at least 25 GB).
 
@@ -27,7 +28,7 @@ INSTALLATION OF VirtualBox AND UBUNTU SETUP
 		Normal installation (includes utilities & browser) is fine.
 		Choose Erase disk and install Ubuntu — this affects only the VM’s virtual disk, not your host drive.
 		Set timezone, username, password.
-		Wait until installation finishes, then reboot VM when prompted. Remove the ISO from virtual drive if asked (Machine → Remove Disk from Virtual Drive).
+		Wait until installation finishes, then reboot VM when prompted.
 
 ---------------------------------------------------------------------
 🔹 1. UNIX came first
@@ -359,3 +360,42 @@ Farm/
 13. Wait! There is a hidden horse in the `Horses` directory! What is it's name??
 		ls -la
 		-->Tory
+
+=============================================================================================
++++++++++++++++++++++         CREATING FILES AND FOLDERS                 ++++++++++++++++++++
+=============================================================================================
+
+1. Create a File
+
+	There are multiple ways to create a file:
+		TOUCH--> 
+					----touch [OPTIONS]..FILE----
+				update the access and modification times of each file to the current time.
+				 A file argument that does not exits is created empty, unlwss -c or -h is supplied
+				used to create a new file from the command line.  touch filename.ext
+				if we try to se touch with a file that already exits,it will simply update the access and modification dates to current time. 
+
+	Command						Use Case
+	touch filename				Creates an empty file or updates timestamp if file exists.
+	cat > filename				Create a file and write content. (Press Ctrl + D to save and exit).
+	nano filename				Opens a text editor to write content.
+	echo "text" > filename		Creates a file with text (overwrites if exists).
+	echo "text" >> filename		Adds text to the end of a file (append mode).
+
+	Examples::
+		touch notes.txt
+		cat > todo.txt         		# Type text, then press Ctrl + D to save
+		nano report.txt       		# Write, then press Ctrl + O (save) and Ctrl + X (exit)
+		echo "Hello Linux" > 		file1.txt
+		echo "More content" >> 		file1.txt
+
+2. Create a Folder (Directory)
+	Command								Description
+	mkdir folder_name					Creates a folder.
+	mkdir folder1 folder2				Creates multiple folders.
+	mkdir -p parent/child1/child2		Creates nested folders (also creates parent folder if it doesn't exist).
+
+		Examples::
+			mkdir my_folder                 
+			mkdir folderA folderB
+			mkdir -p projects/python/app
