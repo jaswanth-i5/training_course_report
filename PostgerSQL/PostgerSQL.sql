@@ -22,7 +22,7 @@ create DATABASE report;
 
 --         postgres=# \c report
 --         You are now connected to database "report" as user "postgres".
-CREATE SCHEMA  Course_report;
+CREATE SCHEMA  course_report;
 
 set search_path to course_report;
 -- SET
