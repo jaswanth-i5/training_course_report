@@ -986,3 +986,74 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+-- ===========================================================
+-- ✅ FULL CLEANUP SCRIPT for MySQL
+-- Database: bank_management_system
+-- ===========================================================
+
+-- Switch to correct database
+USE bank_management_system;
+
+-- ✅ 1️⃣ Drop Triggers (avoid dependency errors)
+DROP TRIGGER IF EXISTS trg_no_negative_balance;
+DROP TRIGGER IF EXISTS trg_log_balance_changes;
+DROP TRIGGER IF EXISTS trg_block_card_on_account_close;
+DROP TRIGGER IF EXISTS trg_no_loan_principal_change;
+DROP TRIGGER IF EXISTS trg_insert_first_emi;
+DROP TRIGGER IF EXISTS trg_update_manager_on_employee_leave;
+DROP TRIGGER IF EXISTS trg_auto_expire_card;
+DROP TRIGGER IF EXISTS trg_prevent_customer_delete;
+DROP TRIGGER IF EXISTS trg_salary_audit;
+DROP TRIGGER IF EXISTS trg_auto_close_inactive_account;
+
+
+-- ✅ 2️⃣ Drop Stored Procedures
+DROP PROCEDURE IF EXISTS transfer_money;
+DROP PROCEDURE IF EXISTS pay_emi;
+DROP PROCEDURE IF EXISTS close_inactive_accounts;
+DROP PROCEDURE IF EXISTS detect_fraud_and_block;
+DROP PROCEDURE IF EXISTS apply_yearly_interest;
+DROP PROCEDURE IF EXISTS log_transaction;
+
+DROP PROCEDURE IF EXISTS get_customer_details;
+DROP PROCEDURE IF EXISTS get_customer_accounts;
+DROP PROCEDURE IF EXISTS update_customer_phone;
+DROP PROCEDURE IF EXISTS get_active_cards;
+DROP PROCEDURE IF EXISTS get_account_transactions;
+DROP PROCEDURE IF EXISTS add_loan;
+DROP PROCEDURE IF EXISTS branch_account_summary;
+DROP PROCEDURE IF EXISTS block_card;
+DROP PROCEDURE IF EXISTS close_loan;
+DROP PROCEDURE IF EXISTS get_total_customer_balance;
+
+
+-- ✅ 3️⃣ Drop Views
+DROP VIEW IF EXISTS v_masked_customers;
+DROP VIEW IF EXISTS v_high_value_customers;
+DROP VIEW IF EXISTS v_branch_performance;
+DROP VIEW IF EXISTS v_expiring_cards;
+DROP VIEW IF EXISTS v_late_loans;
+DROP VIEW IF EXISTS v_employee_hierarchy;
+DROP VIEW IF EXISTS v_loan_progress;
+DROP VIEW IF EXISTS v_dormant_accounts;
+
+
+-- ✅ 4️⃣ Drop Tables (disable foreign key checks first)
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS salary_audit;
+DROP TABLE IF EXISTS loan_payments;
+DROP TABLE IF EXISTS transactions;
+DROP TABLE IF EXISTS cards;
+DROP TABLE IF EXISTS loans;
+DROP TABLE IF EXISTS accounts;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS branches;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+-- ✅ 5️⃣ Finally Remove the Database
+DROP DATABASE IF EXISTS bank_management_system;
